@@ -1,16 +1,120 @@
-# React + Vite
+# BlogHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BlogHub is a full-stack blogging platform built with React (Vite) for the frontend and Node.js/Express with MongoDB for the backend. It allows users to register, log in, create, edit, and view blog posts, as well as comment on posts.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Setup Instructions](#setup-instructions)
+- [API Documentation](#api-documentation)
+- [License](#license)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Overview
+BlogHub is designed to be a simple yet powerful blogging platform. It supports user authentication, post management, categories, and comments. The frontend is styled with Tailwind CSS and communicates with the backend via RESTful APIs.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+- User registration and login
+- JWT-based authentication
+- Create, edit, delete, and view blog posts
+- Comment on posts
+- Categorize posts
+- Responsive UI with Tailwind CSS
+- Protected routes for authenticated users
+
+---
+
+## Screenshots
+Add screenshots of your application here. Example:
+
+![Home Page](Screenshot 3 home.png)
+![Post Detail](Screenshot 2 aii posts.png)
+
+---
+
+## Setup Instructions
+
+### Prerequisites
+- Node.js (v16+ recommended)
+- MongoDB (local or Atlas)
+
+### 1. Clone the repository
+```powershell
+# In PowerShell
+git clone https://github.com/yourusername/bloghub.git
+cd bloghub
+```
+
+### 2. Install dependencies
+```powershell
+cd server
+npm install
+cd ../client
+npm install
+```
+
+### 3. Configure environment variables
+Create a `.env` file in the `server` directory:
+```
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+PORT=5000
+```
+
+### 4. Start the backend server
+```powershell
+cd server
+npm start
+```
+
+### 5. Start the frontend client
+```powershell
+cd client
+npm run dev
+```
+
+The client will run on `http://localhost:5173` and the server on `http://localhost:5000` by default.
+
+---
+
+## API Documentation
+
+### Authentication
+- `POST /api/auth/register` — Register a new user
+- `POST /api/auth/login` — Login and receive JWT
+
+### Posts
+- `GET /api/posts` — Get all posts
+- `GET /api/posts/:id` — Get post by ID
+- `POST /api/posts` — Create a new post (auth required)
+- `PUT /api/posts/:id` — Edit a post (auth required)
+- `DELETE /api/posts/:id` — Delete a post (auth required)
+
+### Comments
+- `POST /api/posts/:id/comments` — Add a comment to a post (auth required)
+- `GET /api/posts/:id/comments` — Get comments for a post
+
+### Categories
+- `GET /api/categories` — List all categories
+- `POST /api/categories` — Create a category (auth required)
+
+---
+
+## License
+MIT
+
+---
+
+## Credits
+- React, Vite, Tailwind CSS
+- Node.js, Express, MongoDB
+
+---
+
+> For more details, see the code in the `client` and `server` folders.
