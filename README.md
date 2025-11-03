@@ -30,7 +30,10 @@ This project demonstrates clean architecture, modular code design, and integrati
 
 ---
 
+
+
 ## 🗂️ **Folder Structure**
+
 
 bloghub/
 │
@@ -57,35 +60,36 @@ bloghub/
 ├── package.json
 └── server.js
 
-yaml
-Copy code
 
----
+
+
+
 
 ## ⚙️ **Setup Instructions**
 
+
 ### **1️⃣ Clone the Repository**
-```bash
+
+
 git clone https://github.com/your-username/bloghub.git
 cd bloghub
-2️⃣ Setup and Run the Backend
-bash
-Copy code
+
+### **2️⃣ Setup and Run the Backend**
+
+
 cd server
 npm install
 Create a .env file inside the server/ directory and then start the backend:
 
-bash
-Copy code
+
 npm run dev   # if using nodemon
 # or
 node server.js
 Backend runs on:
 👉 http://localhost:5000
 
-3️⃣ Setup and Run the Frontend
-bash
-Copy code
+### **3️⃣ Setup and Run the Frontend**
+
 cd ../client
 npm install
 npm start
@@ -96,7 +100,6 @@ Frontend runs on:
 Create a .env file in the /server directory with the following:
 
 env
-Copy code
 PORT=5000
 MONGODB_URI=mongodb+srv://cheburetdaisy65_db_user:12345@cluster0.pns2wuc.mongodb.net/?appName=Cluster0
 JWT_SECRET=myverysecretkey
@@ -162,7 +165,6 @@ Endpoint: http://localhost:5000/api/auth/register
 Body:
 
 json
-Copy code
 {
   "username": "testuser",
   "email": "test@example.com",
@@ -182,8 +184,6 @@ Add this header:
 
 Authorization: Bearer <your_token_here>
 🖼️ Screenshots
-
-
 
 Page	Description
 User login page
@@ -209,7 +209,3 @@ This project is licensed under the MIT License.
 You’re free to use, modify, and distribute it for personal or educational purposes.
 
 Developed with ❤️ by Daisy Cheburet
-
-
-Would you like me to include a **short “Frontend Usage” section** (showing how the React app consumes the API using Axios, e.g., sample code for login/register)?  
-That makes your README even more impressive for portfolios or submissions.
